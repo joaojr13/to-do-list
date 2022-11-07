@@ -1,0 +1,130 @@
+.newTask {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 46rem;
+  margin: -1.7rem auto;
+  gap: 0.5rem;
+}
+
+.newTaskForm {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.newTaskForm input {
+  width: 100%;
+  height: 100%;
+  background: var(--gray-500);
+  border: 0;
+  resize: none;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-300);
+  line-height: 1.4;
+  outline: solid var(--gray-700);
+}
+
+.newTask input:focus {
+  color: var(--gray-100);
+  line-height: 1.4;
+}
+
+.newTask button[type=submit] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  cursor: pointer;
+  line-height: 0;
+  font-weight: 700;
+
+  transition: color 0.2s;
+}
+
+
+.newTask button[type=submit]:hover {
+  background: var(--blue);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 46rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.Tasks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.createdTasks {
+  color: var(--blue);
+}
+
+.doneTasks {
+  color: var(--purple);
+}
+
+.Tasks a {
+  background: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+}
+
+.emptyTasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid var(--gray-400);
+  margin-top: 1.5rem;
+  padding: 4rem;
+  border-radius: 8px;
+}
+
+.emptyTasks strong {
+  margin-top: 1rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.emptyTasks p {
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  html {
+    font-size: 87.5%;
+  }
+  
+  .newTask {
+    width: 90%;
+  }
+
+  main {
+    width: 90%;
+  }
+}
