@@ -18,7 +18,6 @@ function App() {
   function handleNewTaskContent(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('');
     setNewTaskContent(event.target.value);
-    console.log(newTaskContent);
   }
 
   const [listTask, setListTask] = useState<Tarefas[]>([]);
