@@ -20,9 +20,9 @@ function App() {
     setNewTaskContent(event.target.value);
   }
 
-  const [listTask, setListTask] = useState<Tarefas[]>([]);
+  const [listOfTasks, setListTask] = useState<Tarefas[]>([]);
 
-  const totalOfDoneTasks = listTask.filter(task => {
+  const totalOfDoneTasks = listOfTasks.filter(task => {
     return task.isDone === true;
   }).length;
 
@@ -40,14 +40,14 @@ function App() {
   }
 
   function onDeleteTask(idToRemove: number) {
-    const tasksWithoutDeletedOne = listTask.filter(task => {
+    const tasksWithoutDeletedOne = listOfTasks.filter(task => {
       return task.id != idToRemove
     });
     setListTask(tasksWithoutDeletedOne);
   }
 
   function onCheckTask(idToCheck: number) {
-    const tasksWithCheckedOne = listTask.map(task => {
+    const tasksWithCheckedOne = listOfTasks.map(task => {
       if (task.id === idToCheck) {
         return { ...task, isDone: !task.isDone }
       } else {
@@ -91,17 +91,17 @@ function App() {
           <strong
             className={styles.createdTasks}
           >
-            Tarefas criadas <a>{listTask.length}</a>
+            Tarefas criadas <a>{listOfTasks.length}</a>
           </strong>
 
           <strong
             className={styles.doneTasks}
           >
-            Concluídas <a>{totalOfDoneTasks} de {listTask.length}</a>
+            Concluídas <a>{totalOfDoneTasks} de {listOfTasks.length}</a>
           </strong>
         </div>
 
-        {listTask.length == 0 ?
+        {listOfTasks.length == 0 ?
           (
             <div className={styles.emptyTasks}>
               <ClipboardText size={56} />
@@ -111,7 +111,7 @@ function App() {
           )
           :
           (
-            listTask.map(task => {
+            listOfTasks.map(task => {
               return <Task
                 onCheckTask={onCheckTask}
                 onDeleteTask={onDeleteTask}
