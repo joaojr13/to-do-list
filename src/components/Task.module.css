@@ -103,5 +103,9 @@
 
 
 @media (max-width: 768px) {
-  
+  .task input[type="checkbox"]:checked:after {
+    height: 4.5px;
+    width: 1.5px;
+    margin-top: 1px;
+  }
 }
