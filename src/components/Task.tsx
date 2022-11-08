@@ -30,6 +30,7 @@ export function Task({ id, content, isDone, onCheckTask, onDeleteTask }: TaskPro
       </div>
       <button
         onClick={handleDeleteTask}
+        title="Deletar tarefa"
       >
         <Trash />
       </button>
